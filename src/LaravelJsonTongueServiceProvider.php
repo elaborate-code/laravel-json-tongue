@@ -2,9 +2,9 @@
 
 namespace ElaborateCode\LaravelJsonTongue;
 
+use ElaborateCode\LaravelJsonTongue\Commands\LaravelJsonTongueCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use ElaborateCode\LaravelJsonTongue\Commands\LaravelJsonTongueCommand;
 
 class LaravelJsonTongueServiceProvider extends PackageServiceProvider
 {

@@ -2,9 +2,9 @@
 
 namespace ElaborateCode\LaravelJsonTongue\Tests;
 
+use ElaborateCode\LaravelJsonTongue\LaravelJsonTongueServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use ElaborateCode\LaravelJsonTongue\LaravelJsonTongueServiceProvider;
 
 class TestCase extends Orchestra
 {
