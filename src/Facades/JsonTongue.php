@@ -5,12 +5,12 @@ namespace ElaborateCode\LaravelJsonTongue\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \ElaborateCode\LaravelJsonTongue\LaravelJsonTongue
+ * @see \ElaborateCode\LaravelJsonTongue\JsonTongue
  */
-class LaravelJsonTongue extends Facade
+class JsonTongue extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \ElaborateCode\LaravelJsonTongue\LaravelJsonTongue::class;
+        return \ElaborateCode\LaravelJsonTongue\JsonTongue::class;
     }
 }

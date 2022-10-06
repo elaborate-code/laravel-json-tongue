@@ -2,11 +2,11 @@
 
 namespace ElaborateCode\LaravelJsonTongue;
 
+use ElaborateCode\LaravelJsonTongue\Commands\JsonTongueCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use ElaborateCode\LaravelJsonTongue\Commands\LaravelJsonTongueCommand;
 
-class LaravelJsonTongueServiceProvider extends PackageServiceProvider
+class JsonTongueServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -18,8 +18,6 @@ class LaravelJsonTongueServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-json-tongue')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-json-tongue_table')
-            ->hasCommand(LaravelJsonTongueCommand::class);
+            ->hasCommand(JsonTongueCommand::class);
     }
 }

@@ -5,29 +5,16 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/elaborate-code/laravel-json-tongue/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/elaborate-code/laravel-json-tongue/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/elaborate-code/laravel-json-tongue.svg?style=flat-square)](https://packagist.org/packages/elaborate-code/laravel-json-tongue)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+<!-- ![maintained](https://img.shields.io/maintenance/yes/2022) -->
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-json-tongue.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-json-tongue)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+...
 
 ## Installation
 
-You can install the package via composer:
+Install the package via composer:
 
 ```bash
 composer require elaborate-code/laravel-json-tongue
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-json-tongue-migrations"
-php artisan migrate
 ```
 
 You can publish the config file with:
@@ -43,23 +30,16 @@ return [
 ];
 ```
 
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-json-tongue-views"
-```
-
 ## Usage
 
 ```php
-$laravelJsonTongue = new ElaborateCode\LaravelJsonTongue();
-echo $laravelJsonTongue->echoPhrase('Hello, ElaborateCode!');
+
 ```
 
 ## Testing
 
 ```bash
-composer test
+./vendor/bin/pest
 ```
 
 ## Changelog
@@ -70,14 +50,10 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
 ## Credits
 
-- [medilies](https://github.com/medilies)
-- [All Contributors](../../contributors)
+-   [medilies](https://github.com/medilies)
+-   [All Contributors](../../contributors)
 
 ## License
 

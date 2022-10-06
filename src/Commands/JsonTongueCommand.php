@@ -4,7 +4,7 @@ namespace ElaborateCode\LaravelJsonTongue\Commands;
 
 use Illuminate\Console\Command;
 
-class LaravelJsonTongueCommand extends Command
+class JsonTongueCommand extends Command
 {
     public $signature = 'laravel-json-tongue';
 
