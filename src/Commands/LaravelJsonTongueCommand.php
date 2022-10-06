@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace ElaborateCode\LaravelJsonTongue\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelJsonTongueCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-json-tongue';
 
     public $description = 'My command';
 
