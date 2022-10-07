@@ -6,9 +6,9 @@ use Illuminate\Console\Command;
 
 class JsonTongueCommand extends Command
 {
-    public $signature = 'laravel-json-tongue';
+    public $signature = 'json-tongue';
 
-    public $description = 'My command';
+    public $description = 'Marge JSON files';
 
     public function handle(): int
     {
