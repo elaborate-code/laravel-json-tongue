@@ -5,7 +5,7 @@ it('does', function () {
 });
 
 it('translate', function () {
-    $this->app->useLangPath(__DIR__ . '/../lang');
+    $this->app->useLangPath(__DIR__.'/../lang');
 
     // dump($this->app->getLocale());
 

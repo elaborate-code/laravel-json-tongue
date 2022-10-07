@@ -21,6 +21,6 @@ class TestCase extends Orchestra
 
     protected function getBasePath()
     {
-        return __DIR__ . '/laravel/';
+        return __DIR__.'/laravel/';
     }
 }
