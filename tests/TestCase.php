@@ -18,4 +18,9 @@ class TestCase extends Orchestra
             JsonTongueServiceProvider::class,
         ];
     }
+
+    protected function getBasePath()
+    {
+        return __DIR__ . '/laravel/';
+    }
 }
