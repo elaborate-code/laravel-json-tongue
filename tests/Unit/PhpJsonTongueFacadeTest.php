@@ -4,12 +4,12 @@ use ElaborateCode\JsonTongue\JsonFaker\JsonFaker;
 use ElaborateCode\JsonTongue\TongueFacade;
 
 it('uses php-json-tongue', function () {
-    $jsonFaker = JsonFaker::make(tempTestingPath: '/lang', base_testing_path: '/tests/FakeLaravel')
+    $jsonFaker = JsonFaker::make(true, $this->tempTestingPath, $this->baseTestingPath)
         ->addLocale('en', ['greetings.json' => ['Hi' => 'Hi']])
         ->addLocale('fr', ['greetings.json' => ['Hi' => 'Salut']])
         ->write();
 
-    $localizaion = new TongueFacade('/tests/FakeLaravel/lang');
+    $localizaion = new TongueFacade(config('json-tongue.lang-path'));
 
     expect($localizaion)
         ->transcribe()->toHaveCount(2)

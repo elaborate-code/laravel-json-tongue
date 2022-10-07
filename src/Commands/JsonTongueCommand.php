@@ -8,7 +8,7 @@ class JsonTongueCommand extends Command
 {
     public $signature = 'json-tongue';
 
-    public $description = 'Marge JSON files';
+    public $description = 'Merge JSON files';
 
     public function handle(): int
     {
