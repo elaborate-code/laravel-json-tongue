@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "elaborate-code/php-json-tongue": "^1.0",
+        "elaborate-code/php-json-tongue": "^1.2",
         "illuminate/contracts": "^9.0",
         "spatie/laravel-package-tools": "^1.13.0"
     },
