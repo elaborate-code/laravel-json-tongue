@@ -17,27 +17,27 @@ class JsonTongueCommand extends Command
     {
         $force = $this->option('force');
 
-        $lang_path = new File(config('json-tongue.lang-path'));
+        $lang_path = new File(config('json-tongue.lang-path', '/lang'));
 
-        $old_jsons = $lang_path->getDirectoryJsonContent();
+        if ($old_jsons = $lang_path->getDirectoryJsonContent()) {
+            $this->comment('The root of lang folder is populated with JSON files.');
 
-        if ($old_jsons) {
-            if (! $force && ! $this->confirm('Do you wish to remove JSON files that already exist in the lang folder?')) {
-                return self::INVALID;
-            } else {
+            if ($force || $this->confirm('Do you wish to remove JSON files that already exist in the root of the lang folder?')) {
                 $this->removeOldJsonFiles($old_jsons);
+            } else {
+                $this->warn('Remove the JSON files in the root of Lang folder manually, or instruct the command to remove them!');
+
+                return self::FAILURE;
             }
         }
 
-        $localizaion = new TongueFacade($lang_path);
-
-        $jsons_list = $localizaion->transcribe();
+        $jsons_list = (new TongueFacade($lang_path))->transcribe();
 
         foreach ($jsons_list as $json_name => $content) {
             file_put_contents("{$lang_path}/{$json_name}.json", json_encode($content));
         }
 
-        $this->comment('All done');
+        $this->info('JSON files from locale folders are merged in the root of lang Folder!');
 
         return self::SUCCESS;
     }
