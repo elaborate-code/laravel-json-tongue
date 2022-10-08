@@ -1,10 +1,11 @@
 {
     "name": "elaborate-code/laravel-json-tongue",
-    "description": "This is my package laravel-json-tongue",
+    "description": "Use multiple JSON files per locale on Laravel",
     "keywords": [
         "elaborate-code",
         "laravel",
-        "laravel-json-tongue"
+        "laravel-json-tongue",
+        "localization"
     ],
     "homepage": "https://github.com/elaborate-code/laravel-json-tongue",
     "license": "MIT",

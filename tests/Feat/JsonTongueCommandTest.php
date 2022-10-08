@@ -19,8 +19,16 @@ it('asks to remove old JSON files', function () {
 
 it('runs the command & translates successfully', function () {
     $jsonFaker = JsonFaker::make(true, $this->tempTestingPath, $this->baseTestingPath)
-        ->addLocale('en', ['greetings.json' => ['Hi' => 'Hi']])
-        ->addLocale('fr', ['greetings.json' => ['Hi' => 'Salut']])
+        ->addLocale('fr', [
+            'greetings.json' => ['Hi' => 'Salut'],
+            'jobs.json' => ['Programmer' => 'Programeur'],
+            'animals.json' => ['Cat' => 'Chat'],
+        ])
+        ->addLocale('es', [
+            'greetings.json' => ['Hi' => 'Hola'],
+            'jobs.json' => ['Programmer' => 'Programmador'],
+            'animals.json' => ['Cat' => 'Gato'],
+        ])
         ->write();
 
     $this->artisan('json-tongue:merge')->assertSuccessful();
