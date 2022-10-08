@@ -6,7 +6,7 @@ use ElaborateCode\LaravelJsonTongue\Commands\JsonTongueMergeCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class JsonTongueServiceProvider extends PackageServiceProvider
+class LaravelJsonTongueServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {

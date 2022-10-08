@@ -11,7 +11,7 @@ class JsonTongueMergeCommand extends Command
     public $signature = 'json-tongue:merge
                             {--F|force : Remove existing JSON files}';
 
-    public $description = 'Merge JSON files';
+    public $description = 'Copy and merge JSON files from locale folders';
 
     public function handle(): int
     {

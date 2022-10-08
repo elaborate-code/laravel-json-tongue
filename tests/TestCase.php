@@ -2,7 +2,7 @@
 
 namespace ElaborateCode\LaravelJsonTongue\Tests;
 
-use ElaborateCode\LaravelJsonTongue\JsonTongueServiceProvider;
+use ElaborateCode\LaravelJsonTongue\LaravelJsonTongueServiceProvider;
 use ElaborateCode\LaravelJsonTongue\Tests\FakeLaravel\Providers\TestLangProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -23,7 +23,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            JsonTongueServiceProvider::class,
+            LaravelJsonTongueServiceProvider::class,
             TestLangProvider::class,
         ];
     }

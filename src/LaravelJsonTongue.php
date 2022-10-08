@@ -2,6 +2,6 @@
 
 namespace ElaborateCode\LaravelJsonTongue;
 
-class JsonTongue
+class LaravelJsonTongue
 {
 }
