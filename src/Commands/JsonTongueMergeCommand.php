@@ -15,24 +15,10 @@ class JsonTongueMergeCommand extends Command
 
     public function handle(): int
     {
-        $force = $this->option('force');
-
         $lang_path = new File(config('json-tongue.lang-path', '/lang'));
 
-        if ($old_jsons = $lang_path->getDirectoryJsonContent()) {
-            $this->warn('The root of lang folder is populated with JSON files.');
-
-            if ($force || $this->confirm('Do you wish to remove JSON files that already exist in the root of the lang folder?')) {
-                $this->line('Removing old JSON files...');
-
-                $this->removeOldJsonFiles($old_jsons);
-
-                $this->line('Removed old JSON files.');
-            } else {
-                $this->warn('Remove the JSON files in the root of Lang folder manually, or instruct the command to remove them!');
-
-                return self::FAILURE;
-            }
+        if (! $this->handleOldFiles($lang_path->getDirectoryJsonContent())) {
+            return self::FAILURE;
         }
 
         $this->line('Loading localization data...');
@@ -40,7 +26,7 @@ class JsonTongueMergeCommand extends Command
         $jsons_list = (new TongueFacade($lang_path))->transcribe();
         // TODO: list loaded JSON files
 
-        $this->line('Localization data is loaded.');
+        $this->line('Loaded localization data.');
 
         $this->line('Creating new JSON files...');
 
@@ -52,16 +38,42 @@ class JsonTongueMergeCommand extends Command
 
         $this->table(
             ['Generated JSON files'],
-            array_map(fn ($name) => ['Generated JSON files' => "{$name}.json"], array_keys($jsons_list))
+            collect($jsons_list)->keys()->map(fn ($name) => ['Generated JSON files' => "{$name}.json"])->toArray()
         );
 
         return self::SUCCESS;
     }
 
+    protected function handleOldFiles(array $old_jsons): bool
+    {
+        if (! $old_jsons) {
+            return true;
+        }
+
+        $this->warn('The root of lang folder is populated with JSON files.');
+
+        if (
+            $this->option('force') ||
+            $this->confirm('Do you wish to remove JSON files that already exist in the root of the lang folder?')
+        ) {
+            $this->removeOldJsonFiles($old_jsons);
+
+            return true;
+        }
+
+        $this->warn('Remove the JSON files in the root of Lang folder manually, or instruct the command to remove them!');
+
+        return false;
+    }
+
     protected function removeOldJsonFiles(array $json_list)
     {
+        $this->line('Removing old JSON files...');
+
         foreach ($json_list as $file_name => $abs_path) {
             unlink($abs_path);
         }
+
+        $this->line('Removed old JSON files.');
     }
 }
