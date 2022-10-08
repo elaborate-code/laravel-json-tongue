@@ -9,9 +9,9 @@ it('uses php-json-tongue', function () {
         ->addLocale('fr', ['greetings.json' => ['Hi' => 'Salut']])
         ->write();
 
-    $localizaion = new TongueFacade(config('json-tongue.lang-path'));
+    $localization = new TongueFacade(config('json-tongue.lang-path'));
 
-    expect($localizaion)
+    expect($localization)
         ->transcribe()->toHaveCount(2)
         ->transcribe()->toHaveKey('en')
         ->transcribeLang('en')->toHaveCount(1)

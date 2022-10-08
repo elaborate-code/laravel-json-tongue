@@ -62,10 +62,7 @@
         "laravel": {
             "providers": [
                 "ElaborateCode\\LaravelJsonTongue\\LaravelJsonTongueServiceProvider"
-            ],
-            "aliases": {
-                "LaravelJsonTongue": "ElaborateCode\\LaravelJsonTongue\\Facades\\LaravelJsonTongue"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
