@@ -3,14 +3,16 @@
 use ElaborateCode\JsonTongue\JsonFaker\JsonFaker;
 use ElaborateCode\JsonTongue\Strategies\File;
 
-it('throws an exception when lang folder already has JSON files', function () {
+it('asks to remove old JSON files', function () {
     $jsonFaker = JsonFaker::make(true, $this->tempTestingPath, $this->baseTestingPath)
         ->addLocale('en', ['greetings.json' => ['Hi' => 'Hi']])
         ->write();
 
     file_put_contents(new File(config('json-tongue.lang-path')).'/old.json', json_encode([]));
 
-    expect(fn () => $this->artisan('json-tongue'))->toThrow(Exception::class, 'lang directory contains JSON files');
+    $this->artisan('json-tongue')
+        ->expectsConfirmation('Do you wish to remove JSON files that already exist in the lang folder?', 'no')
+        ->assertExitCode(2);
 
     $jsonFaker->rollback();
 });
@@ -28,7 +30,7 @@ it('runs the command & translates successfully', function () {
     $jsonFaker->rollback();
 });
 
-it('does not throw an exception and removes old JSON files when -F', function () {
+it('directly removes old JSON files when using -F option', function () {
     $jsonFaker = new JsonFaker(true, $this->tempTestingPath, $this->baseTestingPath);
 
     file_put_contents(new File(config('json-tongue.lang-path')).'/old.json', json_encode([]));

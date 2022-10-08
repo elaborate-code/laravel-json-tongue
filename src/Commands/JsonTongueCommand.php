@@ -4,13 +4,12 @@ namespace ElaborateCode\LaravelJsonTongue\Commands;
 
 use ElaborateCode\JsonTongue\Strategies\File;
 use ElaborateCode\JsonTongue\TongueFacade;
-use Exception;
 use Illuminate\Console\Command;
 
 class JsonTongueCommand extends Command
 {
     public $signature = 'json-tongue
-                            {--F|force : remove existing JSON files}';
+                            {--F|force : Remove existing JSON files}';
 
     public $description = 'Merge JSON files';
 
@@ -23,9 +22,8 @@ class JsonTongueCommand extends Command
         $old_jsons = $lang_path->getDirectoryJsonContent();
 
         if ($old_jsons) {
-            if (! $force) {
-                // TODO: prompt for clearing
-                throw new Exception('The lang directory contains JSON files, make sure to clear it before running this command');
+            if (! $force && ! $this->confirm('Do you wish to remove JSON files that already exist in the lang folder?')) {
+                return self::INVALID;
             } else {
                 $this->removeOldJsonFiles($old_jsons);
             }
