@@ -10,7 +10,7 @@ it('asks to remove old JSON files', function () {
 
     file_put_contents(new File(config('json-tongue.lang-path')).'/old.json', json_encode([]));
 
-    $this->artisan('json-tongue')
+    $this->artisan('json-tongue:merge')
         ->expectsConfirmation('Do you wish to remove JSON files that already exist in the root of the lang folder?', 'no')
         ->assertFailed();
 
@@ -23,7 +23,7 @@ it('runs the command & translates successfully', function () {
         ->addLocale('fr', ['greetings.json' => ['Hi' => 'Salut']])
         ->write();
 
-    $this->artisan('json-tongue')->assertSuccessful();
+    $this->artisan('json-tongue:merge')->assertSuccessful();
 
     expect(__('Hi'))->toBe('Salut');
 
@@ -35,7 +35,7 @@ it('directly removes old JSON files when using -F option', function () {
 
     file_put_contents(new File(config('json-tongue.lang-path')).'/old.json', json_encode([]));
 
-    $this->artisan('json-tongue -F')->assertSuccessful();
+    $this->artisan('json-tongue:merge -F')->assertSuccessful();
 
     $jsonFaker->rollback();
 });

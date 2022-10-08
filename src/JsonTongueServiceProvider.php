@@ -2,7 +2,7 @@
 
 namespace ElaborateCode\LaravelJsonTongue;
 
-use ElaborateCode\LaravelJsonTongue\Commands\JsonTongueCommand;
+use ElaborateCode\LaravelJsonTongue\Commands\JsonTongueMergeCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -18,6 +18,6 @@ class JsonTongueServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-json-tongue')
             ->hasConfigFile()
-            ->hasCommand(JsonTongueCommand::class);
+            ->hasCommand(JsonTongueMergeCommand::class);
     }
 }

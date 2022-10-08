@@ -6,9 +6,9 @@ use ElaborateCode\JsonTongue\Strategies\File;
 use ElaborateCode\JsonTongue\TongueFacade;
 use Illuminate\Console\Command;
 
-class JsonTongueCommand extends Command
+class JsonTongueMergeCommand extends Command
 {
-    public $signature = 'json-tongue
+    public $signature = 'json-tongue:merge
                             {--F|force : Remove existing JSON files}';
 
     public $description = 'Merge JSON files';
@@ -38,6 +38,8 @@ class JsonTongueCommand extends Command
         }
 
         $this->info('JSON files from locale folders are merged in the root of lang Folder!');
+
+        // TODO: list generated jsons
 
         return self::SUCCESS;
     }
