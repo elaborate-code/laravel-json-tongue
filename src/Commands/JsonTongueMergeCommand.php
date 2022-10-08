@@ -39,7 +39,10 @@ class JsonTongueMergeCommand extends Command
 
         $this->info('JSON files from locale folders are merged in the root of lang Folder!');
 
-        // TODO: list generated jsons
+        $this->table(
+            ['Generated JSON files'],
+            array_map(fn ($name) => ['Generated JSON files' => "{$name}.json"], array_keys($jsons_list))
+        );
 
         return self::SUCCESS;
     }
