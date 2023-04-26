@@ -1,10 +1,10 @@
 # Laravel JSON tongue
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/elaborate-code/laravel-json-tongue.svg?style=flat-square)](https://packagist.org/packages/elaborate-code/laravel-json-tongue)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/elaborate-code/laravel-json-tongue/run-tests?label=tests)](https://github.com/elaborate-code/laravel-json-tongue/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/elaborate-code/laravel-json-tongue/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/elaborate-code/laravel-json-tongue/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/elaborate-code/laravel-json-tongue/run-tests.yml?branch=main)](https://github.com/elaborate-code/laravel-json-tongue/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/elaborate-code/laravel-json-tongue/fix-php-code-style-issues.yml?branch=main)](https://github.com/elaborate-code/laravel-json-tongue/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/elaborate-code/laravel-json-tongue.svg?style=flat-square)](https://packagist.org/packages/elaborate-code/laravel-json-tongue)
-![maintained](https://img.shields.io/maintenance/yes/2022)
+![maintained](https://img.shields.io/maintenance/yes/2023)
 ![Production ready](https://img.shields.io/badge/Production%20ready-no-red)
 
 This package is built on top of [PHP JSON tongue](https://github.com/elaborate-code/php-json-tongue) to enable the usage of multiple JSON files per locale on Laravel.
